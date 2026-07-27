@@ -5,13 +5,10 @@ This project should serve as a frame of reference for anybody who wants to code 
 
 # Model Architectures
 
-Currently, we have:
-- U-Net 
-
-We want to develop:
-- LSTM
-- MLP with Embeddings
-- WaveNet
+- [x] U-Net 
+- [] LSTM
+- [x] MLP with Embeddings
+- [] WaveNet
 
 # The CNN Encoder/Decoder
 
@@ -36,3 +33,14 @@ This model uses 2 skip connections, leaky relu and batchnormalization to predict
 - 2 Conv2D #12
   
 - Output Sigmoid Activation
+
+# MLP with Embeddings
+This model uses a custom lookup table for SMILEs medicine, which it then feeds into a MLP (basically a normal model) to determine their PI50 (the drug's potency). The model architecture is like so:
+
+- Input
+- Batchnormalization
+- Dense 256
+- Dense 128
+- Output
+
+The dataset can be found https://www.kaggle.com/datasets/yanmaksi/big-molecules-smiles-dataset.
